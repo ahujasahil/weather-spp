@@ -1,0 +1,40 @@
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <div class="col-sm-12 text-center" >
+
+            <div class="input-group mt-5">
+                <input class="form-control" type="text" #userInput placeholder="Enter City Name">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-primary" (click)="getCity(userInput.value)">Search</button>
+                </div>
+            </div>
+
+            <h5>current weather in your city</h5>
+            <h2 class="text-danger"> Weather in {{ weather.name }}, {{ weather.sys.country }}   </h2>
+
+        </div>
+        
+        <table class="table table-light table-striped table-bordered table-hover table-sm">
+            <tbody>
+                <tr>
+                    <td>Humidity</td><td>{{weather.main.humidity}}%</td>
+                </tr>
+                <tr>
+                    <td>Pressure</td><td>{{weather.main.pressure}}hpa</td>
+                </tr>
+                <tr>
+                    <td>SunRise</td><td>{{weather.sys.sunrise*1000 | date :'H:mm'}}</td>
+                </tr>
+                <tr>
+                    <td>Sun Set</td><td>{{weather.sys.sunset*1000 | date :'H:mm'}}</td>
+                </tr>
+                <tr>
+                    <td>Geo Coords</td><td>[{{weather.coord.lat}}, {{weather.coord.lon}}]</td>
+                </tr>
+            </tbody> 
+        </table>
+
+      
+       
+    </div>
+</div>
